@@ -18,12 +18,14 @@ public class MenuService {
     private MenuRepository menuRepository;
 
     public List<MenuDTO> buscarMenu() {
-        Set<Menu> menus = new HashSet<Menu>(menuRepository.findAll());
+            Set<Menu> menus = new HashSet<Menu>(menuRepository.findAll());
 
-        List<MenuDTO> retorno = menus.stream().map(MenuHelper::toDTO).collect(Collectors.toList());
+            List<MenuDTO> retorno = menus.stream().map(MenuHelper::toDTO).collect(Collectors.toList());
 
-        retorno.sort((x, y) -> x.getCodigoMenu().compareTo(y.getCodigoMenu()));
+            retorno.sort((x, y) -> x.getCodigoMenu().compareTo(y.getCodigoMenu()));
 
-        return retorno;
+            return retorno;
+
+
     }
 }
